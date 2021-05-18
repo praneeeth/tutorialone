@@ -3,7 +3,42 @@
 
 <head>
   <style>
-    .img:hover{
+img {
+  margin - caption-side:  30px;
+  vertical-align: middle;
+  width:50px;
+  height:50px
+}
+button {
+  padding: 2px;
+   width: 190px;
+      height: 75px;
+      border-radius: 10px;
+      border: 2px solid steelblue;
+      -webkit-border-radius: 10px;
+      background-color: white
+
+
+
+
+}
+button:hover {
+        -webkit-box-shadow: 100px 600px 500px #ccc;
+      box-shadow: 2px 6px 5px #ccc;
+      -moz-box-shadow: 100px 600px 100px #ccc;
+      border: 3px solid #385072;
+                  -moz-border-radius: 10px;
+
+
+
+
+
+
+}
+
+
+ /*   
+    .img:hover {
       width: 190px;
       height: 50px;
       border: 100px solid #fff;
@@ -13,13 +48,13 @@
       -moz-border-radius: 100px;
       -webkit-border-radius: 100px;
       border-radius: 10px;
-     border: 2px solid steelblue;
+      border: 2px solid steelblue;
 
-     
-      
+
+
     }
+*/
 
-    
 
 
     .column {
@@ -30,10 +65,10 @@
       margin-top: 1px;
 
     }
-  
-    
 
-  
+
+
+
 
 
 
@@ -291,7 +326,7 @@
     }
 
 
-function freefire() {
+    function freefire() {
       window.parent.postMessage(
         JSON.stringify({
           event_code: "ym-client-event",
@@ -302,7 +337,7 @@ function freefire() {
 
     }
 
-function call() {
+    function call() {
       window.parent.postMessage(
         JSON.stringify({
           event_code: "ym-client-event",
@@ -314,7 +349,7 @@ function call() {
     }
 
 
-function mine() {
+    function mine() {
       window.parent.postMessage(
         JSON.stringify({
           event_code: "ym-client-event",
@@ -357,26 +392,38 @@ function mine() {
     <div class="row">
       <div class="column">
         <div class="img">
-<!-- 
+          <!-- 
           <button type="button" style="vertical-align:middle"><img src="https://m.cricbuzz.com/a/img/v1/192x192/i1/c170661/virat-kohli.jpg" style="width: 50px;height: 50px;padding-left: 20px;vertical-align:middle; float:left" />Click Me!</button> -->
 
 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/QFuuzaZ68dxu1621255018403.png" alt="Place Holder"
+              onclick="Rockstar()" />
+            Rockstar
+          </button>
 
-          <input type= "image"  name="submit" src="https://cdn.yellowmessenger.com/QFuuzaZ68dxu1621255018403.png"
+
+          <!-- <input type= "image"  name="submit" src="https://cdn.yellowmessenger.com/QFuuzaZ68dxu1621255018403.png"
              border="0"  alt="Submit" style="width: 50px;height: 50px;vertical-align:middle; " onclick="Rockstar()"/> &emsp; <span >Rockstar</span>
+ -->
 
-       
+        </div>
       </div>
-      </div> 
 
 
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/gzQzUptDw2tC1621255146766.png"
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/gzQzUptDw2tC1621255146766.png" alt="Place Holder"
+              onclick="xbox()" />
+            Xbox Gift Card
+          </button>
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/gzQzUptDw2tC1621255146766.png"
             border="0" alt="Submit" style="width: 50px;height: 50px;vertical-align:middle;"  onclick="xbox()"/>&emsp;<span >Xbox Gift Card</span> 
 
-
+ -->
         </div>
       </div>
 
@@ -391,10 +438,16 @@ function mine() {
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/r4ZIYfuOlkMy1621255904388.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;vertical-align:middle;"  onclick="VIU()"/>&emsp;<span >VIU</span> 
+          <button type="button">
+            <img  src="https://cdn.yellowmessenger.com/r4ZIYfuOlkMy1621255904388.png" alt="Place Holder"
+              onclick="VIU()" />
+            VIU
+          </button>
 
-       
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/r4ZIYfuOlkMy1621255904388.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;vertical-align:middle;"  onclick="VIU()"/>&emsp;<span >VIU</span> 
+ -->
+
         </div>
       </div>
 
@@ -402,8 +455,19 @@ function mine() {
 
       <div class="column">
         <div class="img">
+
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/mpTP2ocVvY291621256326863.png" alt="Place Holder"
+              onclick="tinder()" />
+            Voucher Tinder
+          </button>
+
+
+          <!-- 
+
           <input type="image" name="submit" src="https://cdn.yellowmessenger.com/mpTP2ocVvY291621256326863.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;vertical-align:middle;"  onclick="tinder()"/>&emsp;<span >Voucher Tinder</span> 
+            border="0" alt="Submit" style="width: 50px;height: 50px;vertical-align:middle;"  onclick="tinder()"/>&emsp;<span >Voucher Tinder</span>  -->
 
         </div>
       </div>
@@ -422,8 +486,14 @@ function mine() {
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/UOAjvPTRSg5z1621256837439.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="Megaxus()"/>&emsp;<span > Megaxus Mi-Cash</span> 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/UOAjvPTRSg5z1621256837439.png" alt="Place Holder"
+              onclick="Megaxus()" />
+            Megaxus Mi-Cash
+          </button>
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/UOAjvPTRSg5z1621256837439.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="Megaxus()"/>&emsp;<span > Megaxus Mi-Cash</span -->
 
         </div>
       </div>
@@ -432,9 +502,17 @@ function mine() {
 
       <div class="column">
         <div class="img">
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/SUhoLDbKGEYi1621257444482.png" alt="Place Holder"
+              onclick="Epic()" />
+            Epic Games
+          </button>
+
+          <!--  
           <input type="image" name="submit" src="https://cdn.yellowmessenger.com/SUhoLDbKGEYi1621257444482.png"
             border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="Epic()"/>&emsp;<span > Epic Games</span> 
-
+ -->
 
         </div>
       </div>
@@ -454,9 +532,15 @@ function mine() {
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="Steam()"/>&emsp;<span >Steam</span> 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png" alt="Place Holder"
+              onclick="Steam()" />
+            Steam
+          </button>
 
+          <!--   <input type="image" name="submit" src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="Steam()"/>&emsp;<span >Steam</span> 
+ -->
         </div>
       </div>
 
@@ -464,9 +548,17 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/IeWNw3MrNzCe1621258096556.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="vidio()"/>&emsp;<span >Vidio</span> 
 
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/IeWNw3MrNzCe1621258096556.png" alt="Place Holder"
+              onclick="vidio()" />
+            Vidio
+          </button>
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/IeWNw3MrNzCe1621258096556.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="vidio()"/>&emsp;<span >Vidio</span> 
+ -->
         </div>
       </div>
 
@@ -485,9 +577,15 @@ function mine() {
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/O8PADHVkCEfP1621258303624.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="spotify()"/>&emsp;<span >Spotify</span> 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/O8PADHVkCEfP1621258303624.png" alt="Place Holder"
+              onclick="spotify()" />
+            Spotify
+          </button>
 
+          <!--  <input type="image" name="submit" src="https://cdn.yellowmessenger.com/O8PADHVkCEfP1621258303624.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="spotify()"/>&emsp;<span >Spotify</span> 
+ -->
         </div>
       </div>
 
@@ -495,9 +593,17 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/xQzOYnHq1gwg1621258467333.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="nintendo()"/>&emsp;<span >Nintendo eShop Card</span> 
 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/xQzOYnHq1gwg1621258467333.png" alt="Place Holder"
+              onclick="nintendo()" />
+            Nintendo eShop Card
+          </button>
+
+
+          <!--  <input type="image" name="submit" src="https://cdn.yellowmessenger.com/xQzOYnHq1gwg1621258467333.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"   />&emsp;<span >Nintendo eShop Card</span> 
+ -->
 
         </div>
       </div>
@@ -506,15 +612,21 @@ function mine() {
 
 
 
- <center>
+  <center>
 
     <div class="row5">
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/D2I4jeR3931y1621258751531.png"
-            border="0" alt="Submit"  style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="fifa()"/>&emsp;<span >FIFA</span> 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/D2I4jeR3931y1621258751531.png" alt="Place Holder"
+              onclick="fifa()" />
+            FIFA
+          </button>
 
+          <!--  <input type="image" name="submit" src="https://cdn.yellowmessenger.com/D2I4jeR3931y1621258751531.png"
+            border="0" alt="Submit"  style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="fifa()"/>&emsp;<span >FIFA</span> 
+ -->
 
         </div>
       </div>
@@ -523,8 +635,15 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/pFbJw3JiJMIp1621258975136.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="goplay()"/>&emsp;<span >GpPlay</span> 
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/pFbJw3JiJMIp1621258975136.png" alt="Place Holder"
+              onclick="goplay()" />
+            GpPlay
+          </button>
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/pFbJw3JiJMIp1621258975136.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="goplay()"/>&emsp;<span >GpPlay</span>  -->
 
         </div>
       </div>
@@ -533,15 +652,23 @@ function mine() {
 
 
 
- <center>
+  <center>
 
     <div class="row6">
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/bEP1Bx02HK4c1621259361863.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="blackdessert()"/>&emsp;<span >Black Desert SEA</span> 
 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/bEP1Bx02HK4c1621259361863.png" alt="Place Holder"
+              onclick="blackdessert()" />
+            Black Desert SEA
+          </button>
+
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/bEP1Bx02HK4c1621259361863.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="blackdessert()"/>&emsp;<span >Black Desert SEA</span> 
+ -->
         </div>
       </div>
 
@@ -549,8 +676,16 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/0XSsSwk0BnO51621259598189.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="wetv()"/>&emsp;<span >WeTV</span> 
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/0XSsSwk0BnO51621259598189.png" alt="Place Holder"
+              onclick="wetv()" />
+            WeTV
+          </button>
+
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/0XSsSwk0BnO51621259598189.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="wetv()"/>&emsp;<span >WeTV</span> -->
 
 
         </div>
@@ -560,14 +695,22 @@ function mine() {
 
 
 
- <center>
+  <center>
 
     <div class="row7">
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/MR6Smc9Z0JQi1621259882872.png"
-            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="pubg()"/>&emsp;<span >PUBG Mobile</span> 
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/MR6Smc9Z0JQi1621259882872.png" alt="Place Holder"
+              onclick="pubg()" />
+            PUBG Mobile
+          </button>
+
+
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/MR6Smc9Z0JQi1621259882872.png"
+            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="pubg()"/>&emsp;<span >PUBG Mobile</span>  -->
 
         </div>
       </div>
@@ -576,8 +719,17 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="legends()"/>&emsp;<span >Mobile Legends</span>
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png" alt="Place Holder"
+              onclick="legends()" />
+            Mobile Legends
+          </button>
+
+
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="legends()"/>&emsp;<span >Mobile Legends</span> -->
 
         </div>
       </div>
@@ -591,8 +743,14 @@ function mine() {
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/kvXCObLMi3zo1621263228322.png"
-            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="aov()"/>&emsp;<span >AOV</span>
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/kvXCObLMi3zo1621263228322.png" alt="Place Holder"
+              onclick="aov()" />
+            AOV
+          </button>
+
+          <!--  <input type="image" name="submit" src="https://cdn.yellowmessenger.com/kvXCObLMi3zo1621263228322.png"
+            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="aov()"/>&emsp;<span >AOV</span> -->
 
         </div>
       </div>
@@ -601,8 +759,15 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/7Hgs1zs4nskh1621263716393.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="freefire()"/>&emsp;<span >Free Fire</span>
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/7Hgs1zs4nskh1621263716393.png" alt="Place Holder"
+              onclick="freefire()" />
+            Free Fire
+          </button>
+
+          <!--  <input type="image" name="submit" src="https://cdn.yellowmessenger.com/7Hgs1zs4nskh1621263716393.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="freefire()"/>&emsp;<span >Free Fire</span -->
 
 
         </div>
@@ -617,9 +782,15 @@ function mine() {
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/JHGnMiKevRfQ1621264012663.png"
-            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="call()"/>&emsp;<span >Call of Duty</span>
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/JHGnMiKevRfQ1621264012663.png" alt="Place Holder"
+              onclick="call()" />
+            Call of Duty
+          </button>
 
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/JHGnMiKevRfQ1621264012663.png"
+            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="call()"/>&emsp;<span >Call of Duty</span>
+ -->
         </div>
       </div>
 
@@ -627,9 +798,17 @@ function mine() {
 
       <div class="column">
         <div class="img">
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/aowTPkJRsFRC1621263922923.png"
-            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="mine()"/>&emsp;<span >Minecraft</span>
 
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/aowTPkJRsFRC1621263922923.png" alt="Place Holder"
+              onclick="mine()" />
+            Minecraft
+          </button>
+
+          <!-- <input type="image" name="submit" src="https://cdn.yellowmessenger.com/aowTPkJRsFRC1621263922923.png"
+            border="0" alt="Submit" style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="mine()"/>&emsp;<span >Minecraft</span>
+ -->
 
         </div>
       </div>
@@ -638,14 +817,22 @@ function mine() {
 
 
 
-<center>
+  <center>
 
     <div class="row10">
       <div class="column">
         <div class="img">
 
-          <input type="image" name="submit" src="https://cdn.yellowmessenger.com/iKVM7mEyBCsc1621264244678.png"
-            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="wow()"/>&emsp;<span >World of Warships</span>
+
+
+          <button type="button">
+            <img src="https://cdn.yellowmessenger.com/iKVM7mEyBCsc1621264244678.png" alt="Place Holder"
+              onclick="wow()" />
+            World of Warships
+          </button>
+
+          <!--  <input type="image" name="submit" src="https://cdn.yellowmessenger.com/iKVM7mEyBCsc1621264244678.png"
+            border="0" alt="Submit"style="width: 50px;height: 50px;height: 50px;vertical-align:middle;"  onclick="wow()"/>&emsp;<span >World of Warships</span> -->
 
         </div>
       </div>
@@ -662,19 +849,6 @@ function mine() {
       </div>
 
   </center>
-
-
-  
- 
-
-
-
-
-
-  
-
-
-
 
 
 
