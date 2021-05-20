@@ -308,10 +308,21 @@
             );
 
         }
+        
+        
+        function back() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "@go-back"
+                }),
+                "*"
+            );
+        }
     </script>
 
     <h5 id = "heading" ><b>Please choose from the options below</b> 💁‍♀ </h5>
-
+<img src="https://cdn.yellowmessenger.com/f48TFdZWekJJ1621529460336.png" alt="" style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 5px;" onclick="back()">
 
 <button type="button" class="right primary-btn col-xs-11 text-left" onclick="pubg()" >
         <img src="https://cdn.yellowmessenger.com/MR6Smc9Z0JQi1621259882872.png" alt="Place Holder"/>
