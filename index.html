@@ -327,6 +327,18 @@
                 "*"
             );
         }
+
+
+
+         function steamwallet() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "How to Redeem Steam Wallet Voucher Codes"
+                }),
+                "*"
+            );
+        }
     </script>
     <div class = "image">
     <img src="https://cdn.yellowmessenger.com/KseiGAPc8y401621566579976.jpeg" alt="" style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 4px;" onclick="back()">
@@ -338,6 +350,13 @@
         <img src="https://cdn.yellowmessenger.com/MR6Smc9Z0JQi1621259882872.png" alt="Place Holder"/>
         PUBG Mobile
     </button>
+
+
+<button type="button" class="right primary-btn col-xs-11 text-left" onclick="steamwallet()" >
+        <img src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png" alt="Place Holder"/>
+        Steam Wallet
+
+    </button>  
 
 <button type="button" class="right primary-btn col-xs-11 text-left" onclick="freefire()" >
         <img src="https://cdn.yellowmessenger.com/7Hgs1zs4nskh1621263716393.png" alt="Place Holder"/>
@@ -362,7 +381,8 @@
 
 <button type="button" class="right primary-btn col-xs-11 text-left" onclick="steam()" >
         <img src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png" alt="Place Holder"/>
-        Steam
+        Game Steam
+
     </button>   
 
 <button type="button" class="right primary-btn col-xs-11 text-left" onclick="tinder()" >
