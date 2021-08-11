@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+
+
+
     <style>
         body {
-            font-family: 'Lato';
+            font-family: 'lato';
         }
-
         h5 {
             margin: 20px 0px 20px 0px;
-            font-family: 'Lato';
-                          font-weight: bold;
+                            font-family: 'lato';
 
         }
-
         img {
             vertical-align: middle;
-            max-width: 30px;
-            width: 20px;
+            max-width: 30%;
+            width: 30%;
             max-height: 100%;
             margin: 0%;
             padding-right: 2px;
+            float: left;
         }
-
-        
-        
-        .image:hover {
- 
-  box-shadow: 50px blue;
-  transform: translateY(4px);
-  
-}
         button {
             padding: 2px;
             margin: 0.5% 1% 0% 1%;
             width: 48%;
             max-width: 48%;
             height: 50px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
             border-radius: 10px;
             border: 2px solid steelblue;
             -webkit-border-radius: 10px;
             background-color: white;
-            font-family: 'Lato';
+              font-family: 'lato';
+
         }
         button:hover {
             -webkit-box-shadow: 100px 600px 500px #ccc;
@@ -66,257 +62,230 @@
         .right {
             float: right;
         }
-        button {
-            padding: 5px;
+        .vertical-center {
+            vertical-align: middle;
         }
+.image:hover {
+ 
+  box-shadow: 50px blue;
+  transform: translateY(4px);
+  
+}
+
+
+
+        
     </style>
 </head>
 <body>
-    
-    <script type="text/javascript" >
+    <script type="text/javascript">
         
-        window.addEventListener('load', (event) => {
+        
+         window.addEventListener('load', (event) => {
+
+                      void function $getLines($) {
+                function countLines($element) {
+                    var lines = 0;
+                    var greatestOffset = void 0;
+                    $element.find('character').each(function () {
+                        if (!greatestOffset || this.offsetTop > greatestOffset) {
+                            greatestOffset = this.offsetTop;
+                            ++lines;
+                        }
+                    });
+                    return lines;
+                }
+                $.fn.getLines = function $getLines() {
+                    var lines = 0;
+                    var clean = this;
+                    var dirty = this.clone();
+                    (function wrapCharacters(fragment) {
+                        var parent = fragment;
+                        $(fragment).contents().each(function () {
+                            if (this.nodeType === Node.ELEMENT_NODE) {
+                                wrapCharacters(this);
+                            }
+                            else if (this.nodeType === Node.TEXT_NODE) {
+                                void function replaceNode(text) {
+                                    var characters = document.createDocumentFragment();
+                                    text.nodeValue.replace(/[\s\S]/gm, function wrapCharacter(character) {
+                                        characters.appendChild($('<character>' + character + '</>')[0]);
+                                    });
+                                    parent.replaceChild(characters, text);
+                                }(this);
+                            }
+                        });
+                    }(dirty[0]));
+                    clean.replaceWith(dirty);
+                    lines = countLines(dirty);
+                    dirty.replaceWith(clean);
+                    return lines;
+                };
+            }(jQuery);
+            $('span').each(function () {
+                console.log($(this).getLines());
+                if($(this).getLines() == 1){
+                    // var parentTag = $( this ).parent().get( 0 ).tagName;
+                    // console.log(parentTag)
+                    $( this ).prev().css( "float", "none" )
+                }
+            })
+
+
+                     
             
             const { title } = Qs.parse(location.search, { ignoreQueryPrefix: true })
         document.getElementById("heading").innerHTML = title 
     })
-        
-        function rockstar() {
-            console.log("Rockstar voucher code")
+        function need() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "rockstar"
+                    data: "id need for speed no limits"
                 }),
                 "*"
             );
         }
-        function xbox() {
-            console.log("Xbox Gift Card")
+        function genshin() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Xbox Gift Card"
+                    data: "i want Genshin Impact ID"
                 }),
                 "*"
             );
         }
-        function viu() {
-            console.log("How to redeem VIU Voucher Code")
+        function Zepeto() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "How to redeem VIU Voucher Code"
+                    data: "I want Zepeto code"
                 }),
                 "*"
             );
         }
-        function tinder() {
-            console.log("Cara Redeem Kode Voucher Tinder")
+        function Runeterra() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "How to Redeem Tinder Voucher Codes"
+                    data: "Riot ID Legends Of Runeterra"
                 }),
                 "*"
             );
         }
-        function megaxus() {
-            console.log("Bagaimana Cara Menukar Kode Voucher Megaxus Mi Cash")
+        function turbo() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Bagaimana Cara Menukar Kode Voucher Megaxus Mi Cash"
+                    data: "Find Turbo VPN ID"
                 }),
                 "*"
             );
         }
-        function epic() {
-            console.log("i want to redeem Epic Games voucher code")
+        function one() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "i want to redeem Epic Games voucher code"
+                    data: "Bantu saya temukan ID Punch Man Saya"
                 }),
                 "*"
             );
         }
-        function steam() {
-            console.log("Steam")
+        function astral() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Steam"
+                    data: "find my Astral Guardians User ID"
                 }),
                 "*"
             );
         }
-        function vidio() {
-            console.log("How to Redeem Vidio Voucher Code")
+        function blockman() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "How to Redeem Vidio Voucher Code"
+                    data: "find my Blockman Go ID"
                 }),
                 "*"
             );
         }
-        function spotify() {
-            console.log("kode voucher Spotify")
+        function tj() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "kode voucher Spotify"
+                    data: "I want Tom and Jerry Chase ID"
                 }),
                 "*"
             );
         }
-        function nintendo() {
-            console.log("I want to redeem Nintendo eShop Card")
+        function life() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "How to Redeem Nintendo eShop Card Codes"
+                    data: "Bantu saya untuk menemukan ID Pengguna Life After saya"
                 }),
                 "*"
             );
         }
-        function fifa() {
-            console.log("Kode Voucher Poin FIFA")
+        function ros() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Kode Voucher Poin FIFA"
+                    data: "Bagaimana cara saya menemukan ID Rules of Survival"
                 }),
                 "*"
             );
-
         }
-        function goplay() {
-            console.log("Kode Voucher GoPlay")
+        function rag() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Kode Voucher GoPlay"
+                    data: "find my Ragnarok M ID"
                 }),
                 "*"
             );
-
-        }
-        function blackdessert() {
-            console.log("Black Desert SEA Voucher")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "Black Desert SEA Voucher"
-                }),
-                "*"
-            );
-
-        }
-        function wetv() {
-            console.log("I want to redeem WeTV code ")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "I want to redeem WeTV code"
-                }),
-                "*"
-            );
-
-        }
-        function pubg() {
-            console.log("How to Redeem PUBG Mobile Vouchers")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "How to Redeem PUBG Mobile Vouchers"
-                }),
-                "*"
-            );
-
         }
         function legends() {
-            console.log("Redeem Mobile Legends Item Codes")
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Redeem Mobile Legends Item Codes"
+                    data: "Where Can I Find My Mobile Legends User ID"
                 }),
                 "*"
             );
-
         }
         function aov() {
-            console.log("AOV Garena Redeem")
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "AOV Garena Redeem"
+                    data: "where can i find AOV ID"
                 }),
                 "*"
             );
-
         }
-        function freefire() {
-            console.log("Garena Codes in the Free Fire Game")
+
+
+        function Island() {
+            console.log("4")
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Garena Codes in the Free Fire Game"
+                    data: "island king ID"
                 }),
                 "*"
             );
-
         }
-        function call() {
-            console.log("Redeem Garena Shell Vouchers Call of Duty")
+
+         function Domino() {
+            console.log("4")
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "Redeem Garena Shell Vouchers Call of Duty"
+                    data: "Where Can I Find the Higgs Domino ID"
                 }),
                 "*"
             );
-
         }
-        function mine() {
-            console.log("Minecraft voucher code")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "Minecraft voucher code"
-                }),
-                "*"
-            );
-
-        }
-        function wow() {
-            console.log("World of Warships Voucher Codes")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "World of Warships Voucher Codes"
-                }),
-                "*"
-            );
-
-        }
-
-
-
-        function ok() {
-            console.log("World of Warships Voucher Codes")
-            window.parent.postMessage(
-                JSON.stringify({
-                    event_code: "ym-client-event",
-                    data: "okcupid"
-                }),
-                "*"
-            );
-
-        }
-        
         
         function back() {
             window.parent.postMessage(
@@ -329,12 +298,179 @@
         }
 
 
-
-         function steamwallet() {
+        function callofduty() {
             window.parent.postMessage(
                 JSON.stringify({
                     event_code: "ym-client-event",
-                    data: "How to Redeem Steam Wallet Voucher Codes"
+                    data: "Where Can I Find Call of Duty Mobile ID"
+                }),
+                "*"
+            );
+        }
+
+        function mixu() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Mixu ID"
+                }),
+                "*"
+            );
+        }
+        function tumili() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find Tumile ID"
+                }),
+                "*"
+            );
+        }
+
+
+
+
+        function livu() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find a LivU ID"
+                }),
+                "*"
+       
+       function hago() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Hago ID"
+                }),
+                "*"
+            );
+        }
+function nimotv() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Nimo TV ID"
+                }),
+                "*"
+            );
+        }
+function cocofun() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My CocoFun ID"
+                }),
+                "*"
+            );
+        }
+function cookingbattle() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Cooking Battle ID"
+                }),
+                "*"
+            );
+        }
+function rideoutheroes() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Ride Out Heroes ID"
+                }),
+                "*"
+            );
+        }
+function pokertexasboyaa() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Boyaa Texas Poker ID"
+                }),
+                "*"
+            );
+        }
+function pubgmobilelite() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My PUBG Mobile Lite ID"
+                }),
+                "*"
+            );
+        }
+function wildrift() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My League of Legends: Wild Rift Riot ID"
+                }),
+                "*"
+            );
+        }
+function sakurasword() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Scroll of Onmyoji: Sakura & Sword ID"
+                }),
+                "*"
+            );
+        }
+
+function yongheroes() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Yong Heroes ID"
+                }),
+                "*"
+            );
+        }
+function warofrings() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My War of Rings ID"
+                }),
+                "*"
+            );
+        }
+function worldwarheroes() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My World War Heroes ID"
+                }),
+                "*"
+            );
+        }
+
+function omletarcade() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "/Where Can I Find My Omlet Arcade ID"
+                }),
+                "*"
+            );
+        }
+function iceandfire() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Rise of Empires: Ice and Fire ID"
+                }),
+                "*"
+            );
+        }
+function badlanders() {
+            window.parent.postMessage(
+                JSON.stringify({
+                    event_code: "ym-client-event",
+                    data: "Where Can I Find My Badlanders ID"
                 }),
                 "*"
             );
@@ -343,140 +479,173 @@
     <div class = "image">
     <img src="https://cdn.yellowmessenger.com/KseiGAPc8y401621566579976.jpeg" alt="" style="float: right;width:25px;height:25px;max-width: 40px;max-height: 40px;margin-right: 4px;" onclick="back()">
     </div>
-    </br>
-   <b> <h5 id = "heading" >Please choose the voucher redemption tutorial below </h5></b>
+        </br>
+        
+      <h5 id = "heading" style ="font-weight:bold" > Please choose the User ID Guide below.  </h5>
 
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="pubg()" >
-        <img src="https://cdn.yellowmessenger.com/MR6Smc9Z0JQi1621259882872.png" alt="Place Holder"/>
-        PUBG Mobile
+
+
+    <button type="button" onclick="legends()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png" alt="Place Holder" /><span> Mobile Legends</span>
+       
     </button>
 
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="steamwallet()" >
-        <img src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png" alt="Place Holder"/>
-        Steam Wallet
-
-    </button>  
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="freefire()" >
-        <img src="https://cdn.yellowmessenger.com/7Hgs1zs4nskh1621263716393.png" alt="Place Holder"/>
-        Free Fire
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left"  onclick="legends()" >
-        <img src="https://cdn.yellowmessenger.com/FuXxevambEXI1621263064445.png" alt="Place Holder"/>
-        Mobile Legends
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="aov()" >
-        <img src="https://cdn.yellowmessenger.com/kvXCObLMi3zo1621263228322.png" alt="Place Holder"/>
-        AOV
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="call()" >
-        <img src="https://cdn.yellowmessenger.com/JHGnMiKevRfQ1621264012663.png" alt="Place Holder"/>
-        Call of Duty
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="steam()" >
-        <img src="https://cdn.yellowmessenger.com/ebAbcs9HBMzC1621257918055.png" alt="Place Holder"/>
-        Game Steam
-
-    </button>   
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="tinder()" >
-        <img src="https://cdn.yellowmessenger.com/mpTP2ocVvY291621256326863.png" alt="Place Holder"/>
-        Voucher Tinder
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="fifa()" >
-        <img src="https://cdn.yellowmessenger.com/D2I4jeR3931y1621258751531.png" alt="Place Holder"/>
-        FIFA 2020
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="nintendo()" >
-        <img src="https://cdn.yellowmessenger.com/xQzOYnHq1gwg1621258467333.png" alt="Place Holder"/>
-        Nintendo eShop
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="blackdessert()" >
-        <img src="https://cdn.yellowmessenger.com/bEP1Bx02HK4c1621259361863.png" alt="Place Holder"/>
-        Black Desert SEA
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="spotify()" >
-        <img src="https://cdn.yellowmessenger.com/O8PADHVkCEfP1621258303624.png" alt="Place Holder"/>
-        Spotify
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="vidio()" >
-        <img src="https://cdn.yellowmessenger.com/IeWNw3MrNzCe1621258096556.png" alt="Place Holder"/>
-        Vidio
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="viu()" >
-        <img src="https://cdn.yellowmessenger.com/r4ZIYfuOlkMy1621255904388.png" alt="Place Holder"/>
-        VIU
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="ok()" >
-        <img src="https://cdn.yellowmessenger.com/OTscjSRhJHAN1621432257647.png" alt="Place Holder"/>
-        OK Cupid
-
-    </button>
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="goplay()" >
-        <img src="https://cdn.yellowmessenger.com/pFbJw3JiJMIp1621258975136.png" alt="Place Holder"/>
-        GoPlay
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="wetv()" >
-        <img src="https://cdn.yellowmessenger.com/0XSsSwk0BnO51621259598189.png" alt="Place Holder"/>
-        WeTV
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="xbox()" >
-        <img src="https://cdn.yellowmessenger.com/gzQzUptDw2tC1621255146766.png" alt="Place Holder"/>
-        Xbox Gift Card
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="mine()" >
-        <img src="https://cdn.yellowmessenger.com/aowTPkJRsFRC1621263922923.png" alt="Place Holder"/>
-        Minecraft
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="wow()" >
-        <img src="https://cdn.yellowmessenger.com/iKVM7mEyBCsc1621264244678.png" alt="Place Holder"/>
-        World of Warships
-    </button>
-
- <button type="button" class="right primary-btn col-xs-11 text-left" onclick="megaxus()" >
-        <img src="https://cdn.yellowmessenger.com/UOAjvPTRSg5z1621256837439.png" alt="Place Holder"/>
-        Megaxus Mi-Cash
-    </button>
-
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="epic()" >
-        <img src="https://cdn.yellowmessenger.com/SUhoLDbKGEYi1621257444482.png" alt="Place Holder"/>
-        Epic Games
+    <button type="button" onclick="astral()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/4rsuQkAqY6Ix1621269166526.png" alt="Place Holder" /><span> Astral Guardians</span>
+        
     </button>
 
 
 
-
-<button type="button" class="right primary-btn col-xs-11 text-left" onclick="rockstar()" >
-        <img src="https://cdn.yellowmessenger.com/QFuuzaZ68dxu1621255018403.png" alt="Place Holder"/>
-        Rockstar
+    <button type="button" onclick="need()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/3e1pAx0bgiaQ1621267892338.png" alt="Place Holder" /><span> Need For Speed No Limits</span>
+        
+        
     </button>
 
- 
+
+    <button type="button" onclick="Zepeto()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/lZE6Ek9w752k1621268517992.png" alt="Place Holder" /><span> Zepeto</span>
+        
+    </button>
+
+    <button type="button" onclick="blockman()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/Ous65PrfVcCL1621269349298.png" alt="Place Holder" /><span> Blockman Go</span>
+       
+    </button>
+
+    <button type="button" onclick="aov()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/kvXCObLMi3zo1621263228322.png" alt="Place Holder" /><span> AOV</span>
+       
+    </button>
+
+    <button type="button" onclick="turbo()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/8Hc0HGQAk7z81621268850647.png" alt="Place Holder" /><span>  Turbo VPN</span>
+       
+    </button>
+
+
+    <button type="button" onclick="genshin()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/cZFvA5OgTgCU1621268392829.png" alt="Place Holder" /><span> Genshin Impact</span>
+        
+    </button>
+
+    <button type="button" onclick="life()" class="left primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/xm9008Qrc5MG1621269863150.png" alt="Place Holder" /><span> Life After</span>
+        
+    </button>
+
+    <button type="button" onclick="rag()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/XATl6jiNXKzw1621270097191.png" alt="Place Holder" /><span> Ragnarok M</span>
+       
+    </button>
+
+    <button type="button" onclick="ros()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/pXQVfCxbv5g71621270195885.png" alt="Place Holder" /><span> Rules of Survival</span>
+        
+    </button>
+
+    <button type="button" onclick="tj()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/YRWeklRFAUUP1621269527394.png" alt="Place Holder" /><span>  Tom & Jerry :Chase</span>
+       
+    </button>
+
+    <button type="button" onclick="one()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/3owsfOL0nvk21621268951689.png" alt="Place Holder" /><span>  One Punch Man</span>
+       
+    </button>
+
+    
+    <button type="button" onclick="Runeterra()" class="right primary-btn col-xs-11 text-left">
+        <img src="https://cdn.yellowmessenger.com/gB9kc7REl9ag1621268687340.png" alt="Place Holder" /><span> Legends Of Runeterra</span>
+       
+    </button>
+
+ <button type="button" onclick="Island()"class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/ejDdYLmyjByb1622130394434.png" alt="Place Holder" /> <span>  Island King</span>
+          
+        </button>
+
+        <button type="button" onclick="Domino()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/kDWigRmUyb0c1622130297857.png" alt="Place Holder" /> <span>  Higgs Domino </span>
+         
+        </button>
+
+
+         <button type="button" onclick="callofduty()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/r8XHLVEnO9pl1623425193591.jpg" alt="Place Holder" />  <span> Call of Duty Mobile </span>
+          
+        </button>
+
+         <button type="button" onclick="livu()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/NxCqGyW5gC8m1623425519832.png" alt="Place Holder" />  <span> LivU </span>
+         
+        </button>
+
+          <button type="button" onclick="mixu()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/gaIjbJpkRDsQ1623425681721.jpg" alt="Place Holder" />  <span>  Mixu </span>
+         
+        </button>
+
+          <button type="button" onclick="tumili()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/pssU1tVP7FA31623425956368.jpg" alt="Place Holder" />  <span> Tumile</span>
+          
+        </button>
+        <button type="button" onclick="hago()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/Q4X4ukF7LbHn1628675242780.jpg" alt="Place Holder" />  <span> Hago</span>
+</button>
+<button type="button" onclick="nimotv()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/6kP625u5OiqA1628675285185.jpg" alt="Place Holder" />  <span> Nimo TV</span>
+</button>
+<button type="button" onclick="cocofun()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/KX2uibn2xazc1628675311425.jpg" alt="Place Holder" />  <span> CocoFun</span>
+</button>
+<button type="button" onclick="cookingbattle()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/O06xA56mxwqH1628675360596.jpg" alt="Place Holder" />  <span> Cooking Battle</span>
+</button>
+<button type="button" onclick="rideoutheroes()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/Cg13Gp7mBHxA1628675404533.jpg" alt="Place Holder" />  <span> Ride Out Heroes</span>
+</button>
+<button type="button" onclick="pokertexasboyaa()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/zetEYE9fWJBV1628675430591.jpg" alt="Place Holder" />  <span> Poker Texas Boyaa</span>
+</button>
+<button type="button" onclick="pubgmobilelite()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/ok93AZqJBYoa1628675454889.jpg" alt="Place Holder" />  <span> PUBG Mobile Lite</span>
+</button>
+<button type="button" onclick="wildrift()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/vSU1dgPIf1w51628675478217.jpg" alt="Place Holder" />  <span> League of Legends: Wild Rift</span>
+</button>
+<button type="button" onclick="sakurasword()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/fVIx7pfnRjlX1628675524064.jpg" alt="Place Holder" />  <span> Scroll of Onmyoji: Sakura & Sword</span>
+</button>
+<button type="button" onclick="yongheroes()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/77dkBUBpzsAW1628675597730.jpg" alt="Place Holder" />  <span> Yong Heroes</span>
+</button>
+<button type="button" onclick="warofrings()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/rcCHoXfqeqdt1628675668599.jpg" alt="Place Holder" />  <span> World War Heroes</span>
+</button>
+<button type="button" onclick="worldwarheroes()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/pROxr7MjOc9L1628675639532.jpg" alt="Place Holder" />  <span> War of Rings</span>
+</button>
+<button type="button" onclick="omletarcade()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/9GiogKxRMNnO1628675701974.jpg" alt="Place Holder" />  <span> Omlet Arcade</span>
+</button>
+<button type="button" onclick="iceandfire()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/3oPu1A5Ysp5L1628675721760.jpg" alt="Place Holder" />  <span> Rise of Empires: Ice and Fire</span>
+</button>
+<button type="button" onclick="badlanders()" class="right primary-btn col-xs-11 text-left">
+            <img src="https://cdn.yellowmessenger.com/JTMbzkwzMn8T1628675787326.jpg" alt="Place Holder" />  <span> Badlanders</span>
+</button>
+    
+
+
+
+
+
+
+
+
+
 
     
 </body>
